@@ -1,1 +1,3 @@
+configparser
 praw
+sqlite3

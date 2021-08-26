@@ -37,7 +37,7 @@ setuptools.setup(
         "social", "reddit", "automatic"
     ],
     install_requires=[
-        "praw"
+        "configparser", "praw", "sqlite3"
     ],
     license='GPL-3.0',
     python_requires='>=3.6',
