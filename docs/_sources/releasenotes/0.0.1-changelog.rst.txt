@@ -1,0 +1,41 @@
+==========================
+redbot 0.0.1 Release Notes
+==========================
+
+This release has been tested on Python 3.7 - 3.9
+
+
+Highlights
+==========
+
+First release, implemented the following features:
+* Deleting all user comments
+* Deleting all user posts
+
+Dropped Support
+===============
+
+
+Future Changes
+==============
+
+
+Compatibility notes
+===================
+
+
+New Features
+============
+
+
+Improvements
+============
+
+
+Changes
+=======
+
+
+
+Deprecations
+============
