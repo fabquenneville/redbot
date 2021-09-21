@@ -3,6 +3,7 @@
 '''
 
 import os
+import pprint
 import praw
 import sys
 import sqlite3
@@ -56,6 +57,24 @@ def main():
     elif reddit and (arguments["action"] == "delete_all"):
         remove_all_comments(reddit)
         remove_all_posts(reddit)
+    elif reddit and (arguments["action"] == "testcomments"):
+        if not arguments["count"] > 0:
+            return
+        post = False
+        if arguments["url"]:
+            post = reddit.submission(url=arguments["url"])
+        elif arguments["id"]:
+            post = reddit.submission(arguments["id"])
+        if not post:
+            return
+        count = 0
+        while count < arguments["count"]:
+            count += 1
+            post.reply("Test comment " + str(count))
+    elif reddit and (arguments["action"] == "test"):
+        comments = list(reddit.user.me().comments.new(limit=None))
+        print(comments)
+
 
 if __name__ == '__main__':
     main()

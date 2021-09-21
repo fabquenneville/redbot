@@ -15,16 +15,28 @@ def load_arguments():
         arguments: A dictionary of lists of the options passed by the user
     '''
     arguments = {
+        "action"    : False,
         "botname"   : False,
-        "action"    : False
+        "count"     : False,
+        "id"        : False,
+        "search"    : False,
+        "url"       : False
     }
 
     for arg in sys.argv:
         # Confirm with the user that he selected to delete found files
-        if "-botname:" in arg:
-            arguments["botname"] = arg[9:]
-        elif "-action:" in arg:
-            arguments["action"] = arg[8:]
+        if "-action:" in arg:
+            arguments["action"]     = arg[8:]
+        elif "-botname:" in arg:
+            arguments["botname"]    = arg[9:]
+        elif "-count:" in arg:
+            arguments["count"]      = int(arg[7:])
+        elif "-id:" in arg:
+            arguments["id"]         = arg[4:]
+        elif "-search:" in arg:
+            arguments["search"]     = arg[8:]
+        elif "-url:" in arg:
+            arguments["url"]        = arg[5:]
 
     return arguments
 
